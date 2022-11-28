@@ -1,6 +1,7 @@
 // import { type } from "@testing-library/user-event/dist/type";
 // import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import Smartphones from "../Comppnents/Smartphones";
 import { Product } from "../Interface/DataInterface";
 
 const ProductList = () => {
@@ -16,14 +17,18 @@ const ProductList = () => {
   }, []);
   return (
     <>
-      {product.map((val) => {
-        console.log("values", val.images);
-
+    <Smartphones />
+      {product.map((val, id) => {
         return (
           <>
-            <div className=" flex flex-col w-1/4 drop-shadow-lg ">
+          
+            <div className=" flex flex-col w-1/4 drop-shadow-lg" key={id}>
               <div className="flex">
-                <img src={val.images[0]} alt="" />
+                <img
+                  style={{ height: "100%", width: "100%" }}
+                  src={val.images[0]}
+                  alt=""
+                />
               </div>
               <div className="flex">
                 <h1> Title : {val.title}</h1>
