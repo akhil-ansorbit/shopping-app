@@ -1,18 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Cart, User } from "../tools/svgs";
-// import "../Assets/Navbar.css";
 
 const Navbar = () => {
   return (
     <div className="flex justify-between">
       <div className="">Ansorbit</div>
-
       <div className="flex flex-1 justify-evenly">
         <a href="home" className="cursor-pointer">
           <Link to="/">Home</Link>
         </a>
-
         <a href="beg" className="cursor-pointer">
           Beg
         </a>
@@ -27,7 +24,6 @@ const Navbar = () => {
         </a>
         <a href="order" className="cursor-pointer">
           <Link to="/conformation">Order Confirmation</Link>
-          
         </a>
       </div>
 

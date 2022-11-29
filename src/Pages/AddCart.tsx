@@ -1,9 +1,11 @@
-import React from 'react'
-
+import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../App/Store";
 const AddCart = () => {
-  return (
-    <div>AddCart</div>
-  )
-}
+  const cart = useSelector((state: RootState) => state.cart.value);
+  console.log("cart", cart);
 
-export default AddCart
+  return <div>AddCart</div>;
+};
+
+export default AddCart;

@@ -1,9 +1,9 @@
-import Fragrances from "../Comppnents/Fragrances";
-import Groceries from "../Comppnents/Groceries";
-import HomeDecore from "../Comppnents/HomeDecore";
-import Laptops from "../Comppnents/Laptops";
-import Skincare from "../Comppnents/Skincare";
-import Smartphones from "../Comppnents/Smartphones";
+import Fragrances from "../Components/Fragrances";
+import Groceries from "../Components/Groceries";
+import HomeDecore from "../Components/HomeDecore";
+import Laptops from "../Components/Laptops";
+import Skincare from "../Components/Skincare";
+import Smartphones from "../Components/Smartphones";
 
 const ProductList = () => {
   return (
@@ -38,7 +38,7 @@ const ProductList = () => {
 
         <div>
           <div className="text-3xl font-mono font-bold tracking-wide text-center underline align-bottom bg-slate-200 mt-5">
-          Skincare
+            Skincare
           </div>
           <div className="grid grid-cols-3 gap-4">
             <Skincare />
@@ -47,7 +47,7 @@ const ProductList = () => {
 
         <div>
           <div className="text-3xl font-mono font-bold tracking-wide text-center underline align-bottom bg-slate-200 mt-5">
-          Groceries
+            Groceries
           </div>
           <div className="grid grid-cols-3 gap-4">
             <Groceries />
@@ -56,7 +56,7 @@ const ProductList = () => {
 
         <div>
           <div className="text-3xl font-mono font-bold tracking-wide text-center underline align-bottom bg-slate-200 mt-5">
-          HomeDecore
+            HomeDecore
           </div>
           <div className="grid grid-cols-3 gap-4">
             <HomeDecore />

@@ -1,10 +1,10 @@
-import axios from 'axios';
-import React, { useCallback, useEffect, useMemo } from 'react'
-import { Product } from '../Interface/DataInterface';
-import Card from './Card';
+import axios from "axios";
+import React, { useCallback, useEffect, useMemo } from "react";
+import { Product } from "../Interface/DataInterface";
+import Card from "./Card";
 
-const Skincare = () => {
-    const [products, setProducts] = React.useState<Product[]>([]);
+const Laptops = () => {
+  const [products, setProducts] = React.useState<Product[]>([]);
 
   const apiData = useCallback(async () => {
     try {
@@ -21,18 +21,20 @@ const Skincare = () => {
     apiData();
   }, [apiData]);
 
-  const calculation = useMemo(() => {
+  const calculation: Product[] = useMemo(() => {
     if (products) {
-      const newk = products.filter((val) => val.category === "skincare");
+      const newk = products.filter((val) => val.category === "laptops");
       return newk;
     }
     return [];
   }, [products]);
   return (
-    <>{!!calculation &&
+    <>
+      {!!calculation &&
         calculation.map((val, id) => {
           return (
             <Card
+              product={val}
               key={id}
               imgurl={val.images[0]}
               title={val.title}
@@ -40,8 +42,9 @@ const Skincare = () => {
               rating={val.rating}
             />
           );
-        })}</>
-  )
-}
+        })}
+    </>
+  );
+};
 
-export default Skincare
+export default Laptops;

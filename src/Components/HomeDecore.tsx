@@ -34,12 +34,13 @@ const HomeDecore = () => {
         calculation.map((val, id) => {
           return (
             <Card
-            key={id}
-            imgurl={val.images[0]}
-            title={val.title}
-            price={val.price}
-            rating={val.rating}
-          />
+              product={val}
+              key={id}
+              imgurl={val.images[0]}
+              title={val.title}
+              price={val.price}
+              rating={val.rating}
+            />
           );
         })}
     </>
