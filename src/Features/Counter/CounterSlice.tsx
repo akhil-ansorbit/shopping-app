@@ -37,7 +37,7 @@ export const productSlice = createSlice({
         })
       }
       return {
-        ...state,
+        // ...state,
         value: products,
       };
     },

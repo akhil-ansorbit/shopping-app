@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../App/Store";
 import { removeFromCart } from "../Features/Counter/CounterSlice";
 const AddCart = () => {
+  const [qty, setQty] = useState(1);
   const cart = useSelector((state: RootState) => state.cart.value);
   console.log("cart", cart);
   const dispatch = useDispatch();
-
 
   return (
     <>
@@ -28,9 +28,21 @@ const AddCart = () => {
               <span> Rating : {ele.rating}</span>
             </div>
             <div>
-              <button>+</button>
-              {"Qut."}
-              <button>-</button>
+              <button
+                onClick={() => {
+                  setQty(qty + 1);
+                }}
+              >
+                +
+              </button>
+              {`Qty : ${qty}`}
+              <button
+                onClick={() => {
+                  setQty(qty - 1);
+                }}
+              >
+                -
+              </button>
             </div>
             <button
               onClick={() => dispatch(removeFromCart(ele.id))}
@@ -46,3 +58,5 @@ const AddCart = () => {
 };
 
 export default AddCart;
+
+

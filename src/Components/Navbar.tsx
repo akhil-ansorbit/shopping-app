@@ -4,7 +4,7 @@ import { Cart, User } from "../tools/svgs";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between sticky top-2 bg-slate-400 pt-2 pl-2 pr-2">
       <div className="">Ansorbit</div>
       <div className="flex flex-1 justify-evenly">
         <a href="home" className="cursor-pointer">
@@ -31,9 +31,9 @@ const Navbar = () => {
         <div className="cursor">
           <Cart style={{ height: "2.2rem", width: "2.2rem" }} />
         </div>
-        <div>
+        {/* <div>
           <User style={{ height: "2.5rem", width: "2.5rem" }} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
