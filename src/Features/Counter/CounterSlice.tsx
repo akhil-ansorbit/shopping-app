@@ -25,8 +25,24 @@ export const productSlice = createSlice({
         value: products,
       };
     },
+    removeFromCart: (state, action) => {
+      console.log(action.payload);
+      let products: Product[];
+
+      if (state.value.length === 0) {
+        return;
+      } else {
+        products = state.value.filter((item)=>{
+          return item.id!== action.payload ;
+        })
+      }
+      return {
+        ...state,
+        value: products,
+      };
+    },
   },
 });
 
-export const { addToCart } = productSlice.actions;
+export const { addToCart ,removeFromCart } = productSlice.actions;
 export default productSlice.reducer;
