@@ -9,6 +9,7 @@ import ProductList from './Pages/ProductList'
 const Router = () => {
   return (
     <BrowserRouter>
+    <div className='p-8'>
     <Navbar />
     <Routes>
         <Route path='/' element={<Home />}/>
@@ -16,6 +17,7 @@ const Router = () => {
         <Route path='/addtocart' element={<AddCart />}/>
         <Route path='/conformation' element={<ConformOrder />}/>
     </Routes>
+    </div>
     </BrowserRouter>
   )
 }
