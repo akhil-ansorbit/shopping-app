@@ -8,7 +8,7 @@ import {
 } from '../Features/Counter/CounterSlice';
 const AddCart = () => {
   const cart = useSelector((state: RootState) => state.cart.value);
-  console.log('cart', cart);
+  // console.log('cart', cart);
   const dispatch = useDispatch();
 
   return (

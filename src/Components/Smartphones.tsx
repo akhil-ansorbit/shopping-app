@@ -1,20 +1,20 @@
-import axios from "axios";
-import React, { useCallback, useEffect, useMemo } from "react";
-import { Product } from "../Interface/DataInterface";
-import Card from "./Card";
+import axios from 'axios';
+import React, { useCallback, useEffect, useMemo } from 'react';
+import { Product } from '../Interface/DataInterface';
+import Card from './Card';
 
 const Smartphones = () => {
   const [product, setProduct] = React.useState<Product[]>([]);
 
   const apiData = useCallback(async () => {
     try {
-      const responce = await axios("https://dummyjson.com/products");
+      const responce = await axios('https://dummyjson.com/products');
       if (responce) {
-        console.log("responce", responce.data.products);
+        console.log('responce', responce.data.products);
         setProduct(responce.data.products);
       }
     } catch (error) {
-      console.log("err", error);
+      console.log('err', error);
     }
   }, []);
 
@@ -24,7 +24,7 @@ const Smartphones = () => {
 
   const calculation: Product[] = useMemo(() => {
     if (product) {
-      const newk = product.filter((val) => val.category === "smartphones");
+      const newk = product.filter((val) => val.category === 'smartphones');
       return newk;
     }
     return [];

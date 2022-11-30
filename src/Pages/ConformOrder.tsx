@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const ConformOrder = () => {
-  return (
-    <div>ConformOrder</div>
-  )
-}
+  return <div>ConformOrder</div>;
+};
 
-export default ConformOrder
+export default ConformOrder;

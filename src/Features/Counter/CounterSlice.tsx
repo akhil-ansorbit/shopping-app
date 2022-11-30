@@ -22,12 +22,11 @@ export const productSlice = createSlice({
         (item) => item.id === action.payload.id
       );
       if (itemIndex === -1) {
-        const tempItem = { ...action.payload, quantity: 1 };
+        const tempItem: Cart = { ...action.payload, quantity: 1 };
         state.value.push(tempItem);
+        // state.total = state.total * action.payload.price;
       } else {
         state.value[itemIndex].quantity += 1;
-        // state.total =
-        //   state.value[itemIndex].quantity * state.value[itemIndex].price;
       }
     },
 
