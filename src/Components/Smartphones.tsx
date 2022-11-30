@@ -37,6 +37,7 @@ const Smartphones = () => {
           return (
             <Card
               product={val}
+              // quantity={val.quantity}
               key={id}
               imgurl={val.images[0]}
               title={val.title}

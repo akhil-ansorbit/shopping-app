@@ -1,4 +1,4 @@
-export interface Product {
+export interface Cart {
   id: number;
   title: string;
   price: number;
@@ -16,5 +16,6 @@ export interface Product {
     | 'groceries'
     | 'home-decoration';
   description: string;
-  num?: number;
+  quantity: number;
+  total: number;
 }

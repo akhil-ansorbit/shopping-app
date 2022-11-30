@@ -1,35 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Cart, User } from "../tools/svgs";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Cart } from '../tools/svgs';
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between sticky top-2 bg-slate-400 pt-2 pl-2 pr-2">
-      <div className="">Ansorbit</div>
-      <div className="flex flex-1 justify-evenly">
-        <a href="home" className="cursor-pointer">
-          <Link to="/">Home</Link>
+    <div className='flex justify-between sticky top-2 bg-slate-400 pt-2 pl-2 pr-2'>
+      <div className=''>Ansorbit</div>
+      <div className='flex flex-1 justify-evenly'>
+        <a href='home' className='cursor-pointer'>
+          <Link to='/'>Home</Link>
         </a>
-        <a href="beg" className="cursor-pointer">
+        <a href='beg' className='cursor-pointer'>
           Beg
         </a>
-        <a href="about" className="cursor-pointer">
+        <a href='about' className='cursor-pointer'>
           About
         </a>
-        <a href="cart" className="cursor-pointer">
-          <Link to="/addtocart">Cart</Link>
+        <a href='cart' className='cursor-pointer'>
+          <Link to='/addtocart'>Cart</Link>
         </a>
-        <a href="productList" className="cursor-pointer">
-          <Link to="/productlist">Product List</Link>
+        <a href='productList' className='cursor-pointer'>
+          <Link to='/productlist'>Product List</Link>
         </a>
-        <a href="order" className="cursor-pointer">
-          <Link to="/conformation">Order Confirmation</Link>
+        <a href='order' className='cursor-pointer'>
+          <Link to='/conformation'>Order Confirmation</Link>
         </a>
       </div>
 
-      <div className="flex justify-around">
-        <div className="cursor">
-          <Cart style={{ height: "2.2rem", width: "2.2rem" }} />
+      <div className='flex justify-around'>
+        <div className='cursor'>
+          <Cart style={{ height: '2.2rem', width: '2.2rem' }} />
         </div>
         {/* <div>
           <User style={{ height: "2.5rem", width: "2.5rem" }} />

@@ -1,36 +1,39 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../Features/Counter/CounterSlice";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Features/Counter/CounterSlice';
 
 const Card = (props: any) => {
   const { product, imgurl, title, price, rating } = props;
   const dispatch = useDispatch();
-  const [button1 , setButton] = useState(true) 
+  const [button1, setButton] = useState(true);
   const handelClick = () => {
-    dispatch(addToCart(product))
-    setButton(false)
-  }
+    dispatch(addToCart(product));
+    setButton(false);
+  };
   return (
-    <div className=" flex flex-1 max-w-xl flex-col border border-solid  border-black m-10 mt-6 w-2/3 rounded-md">
-      <div className="flex max-w-xs max-h-64 p-1">
-        <img style={{ width: "111%" }} src={imgurl} alt={title} />
+    <div className=' flex flex-1 max-w-xl flex-col border border-solid  border-black m-10 mt-6 w-2/3 rounded-md'>
+      <div className='flex max-w-xs max-h-64 p-1'>
+        <img style={{ width: '111%' }} src={imgurl} alt={title} />
       </div>
-      <div className="flex p-3  text-ellipsis">
+      <div className='flex p-3  text-ellipsis'>
         <h1> Title : {title} </h1>
       </div>
-      <div className="flex justify-between p-3">
+      <div className='flex justify-between p-3'>
         <span>Price : ${price}</span>
         <span> Rating : {rating}</span>
       </div>
-      {button1?  (<button
-        onClick={() => {handelClick()}}
-        className="border border-zinc-900 bg-neutral-400 p-2 cursor-pointer"
+      {button1 ? (
+        <button
+          onClick={() => {
+            handelClick();
+          }}
+          className='border border-zinc-900 bg-neutral-400 p-2 cursor-pointer'
         >
-        Add to cart
-      </button>) : (<button>Added to Cart</button>)
-      }
-      
-      
+          Add to cart
+        </button>
+      ) : (
+        <button>Added to Cart</button>
+      )}
     </div>
   );
 };
