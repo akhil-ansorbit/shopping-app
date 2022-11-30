@@ -24,9 +24,10 @@ export const productSlice = createSlice({
       if (itemIndex === -1) {
         const tempItem: Cart = { ...action.payload, quantity: 1 };
         state.value.push(tempItem);
-        // state.total = state.total * action.payload.price;
+        state.total = (state.total ?? 0) + (action.payload.price as number);
       } else {
         state.value[itemIndex].quantity += 1;
+        state.total = (state.total ?? 0) + (action.payload.price as number);
       }
     },
 
@@ -54,7 +55,7 @@ export const productSlice = createSlice({
       const itemIndex = state.value.findIndex(
         (item) => item.id === action.payload
       );
-      state.value[itemIndex].quantity = 1;
+      state.value[itemIndex].quantity -= 1;
     },
   },
 });

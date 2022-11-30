@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../App/Store';
+import Total from '../Components/Total';
 import {
   removeFromCart,
   increment,
@@ -35,7 +36,7 @@ const AddCart = () => {
             </div>
             <div>
               <button onClick={() => dispatch(decrement(ele.id))}>-</button>
-              {`Qty : ${ele.quantity} && ${ele.total}`}
+              {`Qty : ${ele.quantity}`}
               <button onClick={() => dispatch(increment(ele.id))}>+</button>
             </div>
             <button
@@ -47,6 +48,7 @@ const AddCart = () => {
           </div>
         );
       })}
+      <Total />
     </>
   );
 };

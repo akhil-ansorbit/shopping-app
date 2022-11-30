@@ -35,7 +35,7 @@ const HomeDecore = () => {
           return (
             <Card
               product={val}
-              key={id}s
+              key={id}
               imgurl={val.images[0]}
               title={val.title}
               price={val.price}
