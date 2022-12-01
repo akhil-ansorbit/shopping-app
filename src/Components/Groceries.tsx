@@ -9,8 +9,7 @@ const Groceries = () => {
   const apiData = useCallback(async () => {
     try {
       const responce = await axios('https://dummyjson.com/products');
-      if (responce.data.length > 0) {
-        // console.log("responce", responce.data.products);
+      if (responce.data.products.length > 0) {
         setProducts(responce.data.products);
       }
     } catch (error) {
@@ -22,12 +21,13 @@ const Groceries = () => {
   }, [apiData]);
 
   const calculation: Product[] = useMemo(() => {
-    if (products.length > 0) {
+    if (products) {
       const newk = products.filter((val) => val.category === 'groceries');
       return newk;
     }
     return [];
   }, [products]);
+
   return (
     <>
       {calculation.map((val, id) => {

@@ -13,13 +13,11 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 const AddCart = () => {
   const cart = useSelector((state: RootState) => state.cart.value);
-  // console.log('cart', cart);
   const dispatch = useDispatch();
-  const notify = () => toast('Wow so easy!');
 
   const removeClick = (id: number) => {
     dispatch(removeFromCart(id));
-    notify();
+    toast('done');
   };
 
   return (
@@ -44,7 +42,7 @@ const AddCart = () => {
                       <div>
                         <img src={val.images[0]} className='w-16 h-19' />
                       </div>
-                      <div>
+                      <div className='pl-2'>
                         <div>{val.title}</div>
                         <div>{val.category}</div>
                         <div>{val.rating}</div>
@@ -58,7 +56,7 @@ const AddCart = () => {
                         href='#'
                         className='quantity__minus'
                         onClick={() =>
-                          val.quantity === 0
+                          val.quantity === 1
                             ? removeClick(val.id)
                             : dispatch(decrement(val.id))
                         }

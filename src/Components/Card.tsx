@@ -16,10 +16,10 @@ const Card = (props: any) => {
         <img className='w-full' src={imgurl} alt={title} />
       </div>
       <div>
-        <div className='flex p-3  text-ellipsis'>
+        <div className='flex p-3  text-ellipsis text-slate-400'>
           <h1> Title : {title} </h1>
         </div>
-        <div className='flex justify-between p-3'>
+        <div className='flex justify-between p-3 text-slate-400'>
           <span>Price : ${price}</span>
           <span> Rating : {rating}</span>
         </div>

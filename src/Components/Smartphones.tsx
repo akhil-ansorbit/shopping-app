@@ -10,7 +10,6 @@ const Smartphones = () => {
     try {
       const responce = await axios('https://dummyjson.com/products');
       if (responce) {
-        console.log('responce', responce.data.products);
         setProduct(responce.data.products);
       }
     } catch (error) {

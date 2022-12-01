@@ -1,5 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+// import Model from './Model';
+import { Link } from 'react-router-dom';
 // import { Cart } from '../tools/svgs';
 
 const Navbar = () => {
@@ -27,11 +28,19 @@ const Navbar = () => {
     //   </div>
     // </div>
     <>
-      <div className='navbar bg-base-100'>
-        <div className='flex-1'>
-          <a className='btn btn-ghost normal-case text-xl'>Shopping-Cart</a>
+      <div className='navbar bg-base-100 flex justify-between'>
+        <div className='flex-3'>
+          <div className='normal-case text-xl'>Shopping-Cart</div>
         </div>
-        <div className='flex-none'>
+        <div className='flex justify-around flex-3'>
+          <Link to='/'>
+            <div>Home</div>
+          </Link>
+          <Link to='/addtocart'>
+            <div className='pl-5'>Cart</div>
+          </Link>
+        </div>
+        <div className='flex-none flex-4'>
           <div className='dropdown dropdown-end'>
             <label tabIndex={0} className='btn btn-ghost btn-circle'>
               <div className='indicator'>
@@ -56,8 +65,8 @@ const Navbar = () => {
               tabIndex={0}
               className='mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow'
             >
-              <div className='card-body'>
-                <span className='font-bold text-lg'>8 Items</span>
+              <div className='card-body bg-black'>
+                <span className='font-bold text-lg text-white'>8 Items</span>
                 <span className='text-info'>Subtotal: $999</span>
                 <div className='card-actions'>
                   <button className='btn btn-primary btn-block'>
