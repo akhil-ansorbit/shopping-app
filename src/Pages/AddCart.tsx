@@ -10,7 +10,7 @@ import {
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const AddCart = () => {
   const cart = useSelector((state: RootState) => state.cart.value);
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const AddCart = () => {
     dispatch(removeFromCart(id));
     toast('Item Removed');
   };
-
+  const navigate = useNavigate();
   return (
     <>
       <table className='table'>
@@ -91,15 +91,14 @@ const AddCart = () => {
 
       <Total />
       {cart.length ? (
-        <Link to='/conformation'>
-          <button
-            type='button'
-            className='btn btn-info mt-10'
-            style={{ backgroundColor: '#0dcaf0', color: 'black' }}
-          >
-            Confirmation
-          </button>
-        </Link>
+        <button
+          type='button'
+          className='btn btn-info mt-10'
+          style={{ backgroundColor: '#0dcaf0', color: 'black' }}
+          onClick={() => navigate('/conformation')}
+        >
+          Confirmation
+        </button>
       ) : (
         <button
           type='button'

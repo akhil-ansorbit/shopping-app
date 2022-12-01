@@ -6,8 +6,8 @@ import Total from '../Components/Total';
 
 const ConformOrder = () => {
   const cart = useSelector((state: RootState) => state.cart.value);
-  const date = new Date().toDateString();
-  const time = new Date().toTimeString();
+  const date = new Date().toLocaleDateString();
+  const time = new Date().toLocaleTimeString();
   const id = Math.random();
   return (
     <div>

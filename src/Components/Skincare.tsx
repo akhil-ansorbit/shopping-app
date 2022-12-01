@@ -10,7 +10,6 @@ const Skincare = () => {
     try {
       const responce = await axios('https://dummyjson.com/products');
       if (responce) {
-        // console.log("responce", responce.data.products);
         setProducts(responce.data.products);
       }
     } catch (error) {

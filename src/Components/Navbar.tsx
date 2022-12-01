@@ -9,28 +9,6 @@ import Total from './Total';
 const Navbar = () => {
   const cart = useSelector((state: RootState) => state.cart.value);
   return (
-    // <div className='flex justify-between sticky top-2 bg-slate-400 pt-2 pl-2 pr-2'>
-    //   <div className=''>Ansorbit</div>
-    //   <div className='flex flex-1 justify-evenly'>
-    //     <a href='productList' className='cursor-pointer'>
-    //       <Link to='/'>Product List</Link>
-    //     </a>
-    //     <a href='cart' className='cursor-pointer'>
-    //       <Link to='/addtocart'>Cart</Link>
-    //     </a>
-    //     <a href='order' className='cursor-pointer'>
-    //       <Link to='/conformation'>Order Confirmation</Link>
-    //     </a>
-    //   </div>
-    //   <div className='flex justify-around'>
-    //     <div className='cursor'>
-    //       <Cart style={{ height: '2.2rem', width: '2.2rem' }} />
-    //     </div>
-    //     {/* <div>
-    //        <User style={{ height: "2.5rem", width: "2.5rem" }} />
-    //      </div> */}
-    //   </div>
-    // </div>
     <>
       <div className='navbar bg-base-100 flex justify-between sticky top-0 bg-white'>
         <div className='flex-3'>
