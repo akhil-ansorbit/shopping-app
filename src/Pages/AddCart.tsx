@@ -80,7 +80,10 @@ const AddCart = () => {
                   </td>
                   <td>{val.price * val.quantity}</td>
                   <td>
-                    <RiDeleteBin5Fill onClick={() => removeClick(val.id)} />
+                    <RiDeleteBin5Fill
+                      onClick={() => removeClick(val.id)}
+                      className='text-2xl cursor-pointer border'
+                    />
                   </td>
                 </tr>
               </>
