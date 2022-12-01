@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import AddCart from './Pages/AddCart';
 import ConformOrder from './Pages/ConformOrder';
-import Home from './Pages/Home';
 import ProductList from './Pages/ProductList';
 
 const Router = () => {
@@ -12,8 +11,7 @@ const Router = () => {
       <div className='p-8'>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/productlist' element={<ProductList />} />
+          <Route path='/' element={<ProductList />} />
           <Route path='/addtocart' element={<AddCart />} />
           <Route path='/conformation' element={<ConformOrder />} />
         </Routes>

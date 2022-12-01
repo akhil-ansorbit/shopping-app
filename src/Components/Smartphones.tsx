@@ -39,7 +39,7 @@ const Smartphones = () => {
               product={val}
               // quantity={val.quantity}
               key={id}
-              imgurl={val.images[0]}
+              imgurl={val.images[1]}
               title={val.title}
               price={val.price}
               rating={val.rating}
