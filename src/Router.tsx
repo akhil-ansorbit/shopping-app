@@ -8,7 +8,7 @@ import ProductList from './Pages/ProductList';
 const Router = () => {
   return (
     <BrowserRouter>
-      <div className='p-8'>
+      <div className='pl-8 pr-8 pb-8'>
         <Navbar />
         <Routes>
           <Route path='/' element={<ProductList />} />

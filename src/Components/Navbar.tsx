@@ -1,9 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 // import Model from './Model';
 import { Link } from 'react-router-dom';
+import { RootState } from '../App/Store';
+import Total from './Total';
 // import { Cart } from '../tools/svgs';
 
 const Navbar = () => {
+  const cart = useSelector((state: RootState) => state.cart.value);
   return (
     // <div className='flex justify-between sticky top-2 bg-slate-400 pt-2 pl-2 pr-2'>
     //   <div className=''>Ansorbit</div>
@@ -28,7 +32,7 @@ const Navbar = () => {
     //   </div>
     // </div>
     <>
-      <div className='navbar bg-base-100 flex justify-between'>
+      <div className='navbar bg-base-100 flex justify-between sticky top-0 bg-white'>
         <div className='flex-3'>
           <div className='normal-case text-xl'>Shopping-Cart</div>
         </div>
@@ -58,7 +62,9 @@ const Navbar = () => {
                     d='M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z'
                   />
                 </svg>
-                <span className='badge badge-sm indicator-item'>8</span>
+                <span className='badge badge-sm indicator-item'>
+                  {cart.length}
+                </span>
               </div>
             </label>
             <div
@@ -66,12 +72,18 @@ const Navbar = () => {
               className='mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow'
             >
               <div className='card-body bg-black'>
-                <span className='font-bold text-lg text-white'>8 Items</span>
-                <span className='text-info'>Subtotal: $999</span>
+                <span className='font-bold text-lg text-white'>
+                  {cart.length} Items
+                </span>
+                <span className='text-info text-s'>
+                  <Total />
+                </span>
                 <div className='card-actions'>
-                  <button className='btn btn-primary btn-block'>
-                    View cart
-                  </button>
+                  <Link to='/addtocart'>
+                    <button className='btn btn-primary btn-block'>
+                      View cart
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

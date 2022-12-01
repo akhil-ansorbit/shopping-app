@@ -12,9 +12,9 @@ const Total = () => {
   });
 
   return (
-    <div className='mb-20'>
-      <div className='text-4xl mb-2'>Total Qty.:{totalQuantity}</div>
-      <div className='text-4xl'>Total Prices:{totalPrice}</div>
+    <div className=''>
+      <div className='text-2xl'>Total Qty.:{totalQuantity}</div>
+      <div className='text-4xl'>Total Prices:${totalPrice}</div>
     </div>
   );
 };

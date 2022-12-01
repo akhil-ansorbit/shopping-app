@@ -17,7 +17,7 @@ const AddCart = () => {
 
   const removeClick = (id: number) => {
     dispatch(removeFromCart(id));
-    toast('done');
+    toast('Item Removed');
   };
 
   return (
@@ -90,11 +90,26 @@ const AddCart = () => {
       </table>
 
       <Total />
-      <Link to='/conformation'>
-        <button type='button' className='btn btn-info'>
+      {cart.length ? (
+        <Link to='/conformation'>
+          <button
+            type='button'
+            className='btn btn-info mt-10'
+            style={{ backgroundColor: '#0dcaf0', color: 'black' }}
+          >
+            Confirmation
+          </button>
+        </Link>
+      ) : (
+        <button
+          type='button'
+          className='btn btn-info mt-10'
+          style={{ backgroundColor: '#0dcaf0', color: 'black' }}
+          onClick={() => toast('Cart is empty')}
+        >
           Confirmation
         </button>
-      </Link>
+      )}
     </>
   );
 };
