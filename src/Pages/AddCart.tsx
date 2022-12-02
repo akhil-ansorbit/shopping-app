@@ -98,7 +98,16 @@ const AddCart = () => {
           type='button'
           className='btn btn-info mt-10'
           style={{ backgroundColor: '#0dcaf0', color: 'black' }}
-          onClick={() => navigate('/conformation')}
+          onClick={() =>
+            navigate('/conformation', {
+              state: {
+                products: [cart],
+                total: 5600,
+                time: '2:00PM',
+                date: '2 Dec 2022',
+              },
+            })
+          }
         >
           Confirmation
         </button>

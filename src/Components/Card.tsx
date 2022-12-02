@@ -31,7 +31,7 @@ const Card = (props: any) => {
             Add to cart
           </button>
         ) : (
-          <button className='border border-zinc-900 bg-neutral-400 p-2 cursor-pointer w-full'>
+          <button className='border border-zinc-900 bg-neutral-400 p-2 w-full'>
             Added to Cart
           </button>
         )}

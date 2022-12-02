@@ -12,7 +12,9 @@ const Navbar = () => {
     <>
       <div className='navbar bg-base-100 flex justify-between sticky top-0 bg-white'>
         <div className='flex-3'>
-          <div className='normal-case text-xl'>Shopping-Cart</div>
+          <Link to='/'>
+            <div className='normal-case text-xl'>Shopping-Cart</div>
+          </Link>
         </div>
         <div className='flex justify-around flex-3'>
           <Link to='/'>

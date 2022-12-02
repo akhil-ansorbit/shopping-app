@@ -57,6 +57,11 @@ export const productSlice = createSlice({
       );
       state.value[itemIndex].quantity -= 1;
     },
+    emptyCart: (state, action) => {
+      return {
+        value: [],
+      };
+    },
   },
 });
 
